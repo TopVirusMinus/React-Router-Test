@@ -4,18 +4,20 @@ import App from "./App";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import Root from "./Routes/Root";
+import Faq from "./Routes/Faq";
+import Contact from "./Routes/Contact";
+import Home from "./Routes/Home";
+
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-  },
-  {
-    path: "contact",
-    element: <div>contact</div>,
-  },
-  {
-    path: "faq",
-    element: <div>faq</div>,
+    element: <Root />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "contact", element: <Contact /> },
+      { path: "faq", element: <Faq /> },
+    ],
   },
 ]);
 
