@@ -18,7 +18,7 @@ const routes = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "contact", element: <Contact /> },
-      { path: "faq", element: <Faq /> },
+      { path: ":questionId/faq", element: <Faq /> },
     ],
   },
 ]);

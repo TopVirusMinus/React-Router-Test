@@ -1,7 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 export const Header = () => {
+  let questionId = -1;
+  const { questionParamId } = useParams();
   return (
     <div className="header">
       <h1>Learn code</h1>
@@ -12,7 +14,7 @@ export const Header = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/faq" end>
+          <NavLink to={`${questionId}/faq`} end>
             faq
           </NavLink>
         </li>
